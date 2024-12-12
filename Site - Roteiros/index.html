@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+    <title>Roteiro de vendas</title>
+</head>
+<body>
+    <header id="cabeçalho">
+        <div id="container_title">
+            <h1 id="title">Roteiro de Vendas</h1>
+            <span><h2 id="title2">Escolha uma dentre as opções</h2></span>
+        </div>
+    </header>
+
+    <div id="container_select">
+        <input id="showAP" type="button" value="Apresentação">
+        <input id="showEx" type="button" value="Explicações">
+        <input id="showAVA" type="button" value="Entrega/Avaliação">
+    </div>
+
+    <span id="textCopy"></span>
+    
+    <div id="divBtn">
+    </div>
+
+
+    <script>
+        const divBtn = document.getElementById("divBtn")
+        const inpBtn = document.createElement("input")
+        const showAP = document.getElementById("showAP") 
+        const showEx = document.getElementById("showEx")
+        const showAVA = document.getElementById("showAVA")
+        var container_select = document.getElementById("container_select")
+        var textCopy = document.getElementById("textCopy")
+
+        var headerTitle = document.getElementById("title")
+        var title2 = document.getElementById("title2")
+
+        
+
+        showAP.addEventListener("click", () => {
+            headerTitle.innerHTML = "Apresentações"
+            title2.innerHTML = "Escolha uma dentre as apresentações"
+           
+            showAP.remove()
+            showEx.remove()
+            showAVA.remove()
+            createBtn()
+
+            var inpAP1 = document.createElement("input")
+            var inpAP2 = document.createElement("input")
+            var inpAP3 = document.createElement("input")
+            inpAP1.type = "button"
+            inpAP2.type = "button"
+            inpAP3.type = "button"
+            inpAP1.value = "Olá, bom dia! Tudo bem? Posso lhe enviar o PS?"
+            inpAP2.value = "Olá, boa tarde! Tudo bem? Posso lhe enviar o PS?"
+            inpAP3.value = "Olá, boa noite! Tudo bem? Posso lhe enviar o PS?"
+
+            inpAP1.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAP1.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpAP2.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAP2.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpAP3.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAP3.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+
+
+            container_select.appendChild(inpAP1)
+            container_select.appendChild(inpAP2)
+            container_select.appendChild(inpAP3)
+        })
+
+        
+        showEx.addEventListener("click", () => {
+            headerTitle.innerHTML = "Explicações"
+            title2.innerHTML = "Escolha uma dentre as explicações"
+
+            showAP.remove()
+            showEx.remove()
+            showAVA.remove()
+            createBtn()
+
+            var inpEx1 = document.createElement("input")
+            var inpEx2 = document.createElement("input")
+            var inpEx3 = document.createElement("input")
+            
+            inpEx1.type = "button"
+            inpEx2.type = "button"
+            inpEx3.type = "button"
+            inpEx1.value = "Me desculpe pela demora, não acontecerá de novo!"
+            inpEx2.value = "Me desculpe pelo atraso da resposta, estou tendo instabildade com a minha conexão com a internet!"
+            inpEx3.value = "Desculpe por não ter visto! Não acontecerá novamente!"
+
+            inpEx1.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpEx1.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpEx2.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpEx2.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpEx3.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpEx3.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            container_select.appendChild(inpEx1)
+            container_select.appendChild(inpEx2)
+            container_select.appendChild(inpEx3)
+        })
+
+        
+        
+        showAVA.addEventListener("click", () => {
+            headerTitle.innerHTML = "Entregas/Avaliações"
+            title2.innerHTML = "Escolha uma dentre as entregas e pedidos de avaliação"
+
+            showAP.remove()
+            showEx.remove()
+            showAVA.remove()
+            createBtn()
+
+            var inpAVA0 = document.createElement("input")
+            var inpAVA1 = document.createElement("input")
+            var inpAVA2 = document.createElement("input")
+            var inpAVA3 = document.createElement("input")
+            var inpAVA4 = document.createElement("input")
+            
+            inpAVA0.type = "button"
+            inpAVA1.type = "button"
+            inpAVA2.type = "button"
+            inpAVA3.type = "button"
+            inpAVA4.type = "button"
+            inpAVA0.value = "Entregue!"
+            inpAVA1.value = "Muito obrigado por comprar na Maverick STORE! Se puder me avaliar também, isso me ajuda bastante!"
+            inpAVA2.value = "Obrigado pela confiança disposta a mim! Ficarei extremamente grato se puder me avaliar também!"
+            inpAVA3.value = "Muito obrigado por comprar comigo!"
+            inpAVA4.value = "Se puder me avaliar, para eu saber como foi sua experiência ao comprar na minha loja, isso me ajudaria bastante!"
+
+            inpAVA0.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAVA0.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpAVA1.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAVA1.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpAVA2.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAVA2.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpAVA3.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAVA3.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+
+            inpAVA4.addEventListener("click", () => {
+                navigator.clipboard.writeText(inpAVA4.value)
+                    .then(() => {
+                        textCopy.innerHTML = "Texto copiado!"
+                    })
+            })
+            
+            container_select.appendChild(inpAVA0)
+            container_select.appendChild(inpAVA1)
+            container_select.appendChild(inpAVA2)
+            container_select.appendChild(inpAVA3)
+            container_select.appendChild(inpAVA4)
+        })
+
+        inpBtn.addEventListener("click", () => {
+            window.location.reload()
+        })
+
+
+        function createBtn() {
+            inpBtn.type = "button"
+            inpBtn.value = "Voltar"
+
+            divBtn.append(inpBtn)
+        }
+
+        function removeBtn () {
+            inpBtn = ""
+        }
+
+
+
+
+    </script>
+</body>
+</html>
